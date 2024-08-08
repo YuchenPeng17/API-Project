@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "api-project"
+version = "0.1.0"
+description = ""
+authors = ["Yuchen <yucpeng17@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "^2.0.1"
+flask-graphql = "^2.0.1"
+graphene = "<3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

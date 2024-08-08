@@ -1,0 +1,24 @@
+1. Get all books
+GET: http://127.0.0.1:5000/books
+
+2. Get the book with ID = 1
+GET: http://127.0.0.1:5000/books/1
+
+3. Update the book with ID = 2 and with the content in the body
+PUT: http://127.0.0.1:5000/books/2
+{
+	"id": 2,
+	"title": "Update",
+	"author": "Yuchen"
+}
+
+4. Delete the book with ID = 2
+DEL: http://127.0.0.1:5000/books/2
+
+5. Post / Create a new book with the content in the body
+POST: http://127.0.0.1:5000/books
+{
+	"id": 2,
+	"title": "Nice Book",
+	"author": "YuchenPeng"
+}

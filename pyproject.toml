@@ -6,10 +6,15 @@ authors = ["Yuchen <yucpeng17@outlook.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.9,<4.0"
+graphene = {extras = ["flask"], version = "^3.3"}
+graphene-mongo = "^0.4.4"
 flask = "^2.0.1"
-flask-graphql = "^2.0.1"
-graphene = "<3.0"
+pymongo = "^4.8.0"
+pyyaml = "^6.0.2"
+mongoengine = "^0.28.2"
+python-dateutil = "^2.9.0.post0"
+
 
 
 [build-system]

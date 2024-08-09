@@ -217,3 +217,49 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
+
+
+## Stock API Project
+
+- `stock_api`
+
+
+
+Flask
+
+- **`Blueprints`** in Flask are a way to organize your application into modular components.
+- For large applications -> separate different functionalities into distinct modules.
+
+
+
+`__name__`
+
+- **When run directly:** `__name__` is `"__main__"`, allowing code to execute only when the module is run directly.
+- **When imported:** `__name__` is set to the module's filename (e.g., `'rest_api'` for `rest_api.py`), enabling resource management specific to that module.
+
+
+
+### GraphQL
+
+#### Overview
+
+1. **Models (`graphql_models.py`)**: Define the structure of the data using MongoDB as the database.
+2. **Schema (`graphql_schema.py`)**: Define the GraphQL schema, including queries, mutations, and how they interact with the models.
+3. **GraphQL API (`graphql_api.py`)**: Sets up the GraphQL endpoint in the Flask application.
+4. **Server (`main.py`)**: Sets up and runs the Flask application, registering the API endpoints.
+
+
+
+#### Workflow
+
+1. **Request Flow**:
+   - A GraphQL request is sent to `/graphql`.
+   - `graphql_api.py` handles this request using the schema defined in `graphql_schema.py`.
+2. **Query/Mutation Execution**:
+   - Queries or mutations defined in the schema are executed.
+   - These interact with the models in `graphql_models.py` to fetch or modify data.
+3. **Response**:
+   - The result is returned to the client through the GraphQL API.
+
+
+

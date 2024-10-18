@@ -263,3 +263,30 @@ Flask
 
 
 
+#### Implementation Steps
+
+Initialised 4 files (`server.py`, `api.py`, `models.py`, `schema.py`)
+
+`server.py`
+
+- 2. Set up connection with MongoDB `connect(**MONGODB_SETTINGS)`
+
+`api.py`
+
+ `models.py`
+
+- 1. Import `mongoengine` for interaction with the MongoDB using Python classes
+
+- 3. `from mongoengine import Document` and necessary fields and define Document as Python classes.
+
+     
+
+`schema.py`
+
+- 4. `import graphene`, `from graphene_mongo import MongoengineObjectType` Create GraphQL representations of MongoDB models for data dispalying and interaction. 
+
+
+
+
+
+mongoengine documentation: http://docs.mongoengine.org/tutorial.html

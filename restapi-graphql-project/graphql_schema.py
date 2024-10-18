@@ -1,15 +1,36 @@
 # graphql_schema.py
+"""
+`graphene`
+- A Python library used to build GraphQL APIs
+`graphene-mongo`
+- An extension of Graphene that integrates with mongoengine, 
+allowing you to easily map MongoDB models to GraphQL types.
+
+Using `graphene` and `graphene-mongo` to create GraphQL types from your MongoDB models, 
+enabling you to query and mutate data via GraphQL.
+"""
 import graphene
-from dateutil.parser import parse
 from graphene import Boolean, Field, List, Mutation, ObjectType, String
 from graphene_mongo import MongoengineObjectType
 from graphql_models import Comment as CommentModel
 from graphql_models import Post as PostModel
 from graphql_models import User as UserModel
 from graphql_models import UserInfo as UserInfoModel
+from dateutil.parser import parse
 from werkzeug.security import check_password_hash, generate_password_hash
 
+"""
+`UserInfo`
+- name of the GraphQL type
 
+`MongoengineObjectType`
+- a special type provided by graphene-mongo
+
+`Meta`
+- A nested class used to provide additional configuration for the Type.
+`model`
+- An attribute specifies the mongoengine model that the GraphQL type is based on. 
+"""
 class UserInfo(MongoengineObjectType):
     class Meta:
         model = UserInfoModel
@@ -19,6 +40,10 @@ class Post(MongoengineObjectType):
     class Meta:
         model = PostModel
 
+    """
+    `custom resolvers`:
+    - Control how specific fields are computed or transformed before being sent to the client.
+    """
     poster_user_info = Field(UserInfo)
     comment_ids = List(String)
     post_url = String()
